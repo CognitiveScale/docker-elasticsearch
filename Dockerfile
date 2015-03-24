@@ -17,7 +17,9 @@ RUN wget -qO- https://download.elasticsearch.org/elasticsearch/elasticsearch/ela
   mkdir -p /data /logs
 
 ADD run.sh /
+ADD supervisord.conf /etc/supervisor/supervisord.conf
 RUN chmod +x /run.sh
 EXPOSE 9200 9300
 
-CMD ["/usr/bin/supervisord"]
+# Default command when starting the container
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/supervisord.conf"]
