@@ -8,11 +8,11 @@ ENV ES_VER 1.4.1
 
 RUN wget -qO- https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-$ES_VER.tar.gz | tar -zxvf - -C /opt  && \
   cd /opt/elasticsearch-$ES_VER && \
-  ./bin/plugin --install elasticsearch/marvel/latest && \
+  #./bin/plugin --install elasticsearch/marvel/latest && \
   ./bin/plugin --install lmenezes/elasticsearch-kopf/1.4.3 &&\
-  ./bin/plugin --install royrusso/elasticsearch-HQ && \
-  ./bin/plugin --install karmi/elasticsearch-paramedic && \
-  ./bin/plugin --install lukas-vlcek/bigdesk && \
+  #./bin/plugin --install royrusso/elasticsearch-HQ && \
+  #./bin/plugin --install karmi/elasticsearch-paramedic && \
+  #./bin/plugin --install lukas-vlcek/bigdesk && \
   ./bin/plugin --install com.yakaz.elasticsearch.plugins/elasticsearch-analysis-combo/1.5.1 && \
   mkdir -p /data /logs
 
