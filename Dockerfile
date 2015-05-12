@@ -1,8 +1,10 @@
 # c12e/elasticsearch
-# volume: /data, /logs 
 
 FROM c12e/debian
-MAINTAINER Cognitive Scale cognitivescale.com
+MAINTAINER CognitiveScale.com
+ENV SERVICE_NAME=elasticsearch
+
+ADD supervisor.conf /etc/supervisor/conf.d/${SERVICE_NAME}.conf
 
 ENV ES_VER 1.4.1
 
@@ -17,8 +19,6 @@ RUN wget -qO- https://download.elasticsearch.org/elasticsearch/elasticsearch/ela
   mkdir -p /data /logs
 
 ADD run.sh /
-ADD supervisord.conf /etc/supervisor/supervisord.conf
-RUN chmod +x /run.sh
 EXPOSE 9200 9300
 
 # Default command when starting the container
