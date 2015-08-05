@@ -2,9 +2,8 @@
 
 FROM c12e/debian
 MAINTAINER CognitiveScale.com
-ENV SERVICE_NAME=elasticsearch
 
-ADD supervisor.conf /etc/supervisor/conf.d/${SERVICE_NAME}.conf
+ADD supervisor.conf /etc/supervisor/conf.d/elasticsearch.conf
 
 ENV ES_VER 1.5.2
 
